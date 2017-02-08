@@ -1,6 +1,10 @@
 #include <stdio.h>
 
-/* Use puts instead of printf to output a script */
+/*
+ * main - Entry point
+ *
+ * Return: Always 0 (Success)
+ */
 
 int main(void)
 {
