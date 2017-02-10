@@ -12,3 +12,4 @@ Programs practicing variables, if, else, and while in the C language;
 8-print_base16.c -> Write a program that prints all the numbers of base 16, in lowercase, followed by a new line;
 9-print_comb.c -> Write a program that prints all possible combinations of single-digit numbers;
 10-print_comb2.c -> Write a program that prints numbers from 0 to 99;
+100-print_comb3.c -> Write a program that prints all possibel different combinations of two digits;
