@@ -19,10 +19,9 @@ int main(void)
 		putchar(' ');
 		i++;
 	}
-	while (i == '9')
+	if (i == '9')
 	{
 		putchar(i);
-		i++;
 	}
 	putchar('\n');
 	return (0);
