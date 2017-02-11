@@ -8,21 +8,19 @@
 
 int main(void)
 {
-	int a;
-	int b;
+	int a, b;
 
 	a = '0';
-	b = (a + '1');
 
 	while (a <= '9')
 	{
+		b = (a + 1);
+
 		while (b <= '9')
 		{
 			putchar(a);
 			putchar(b);
-			if ((a == 8) && (b == 9))
-				;
-			else
+			if (!(a == '8' && b == '9'))
 			{
 				putchar(',');
 				putchar(' ');
