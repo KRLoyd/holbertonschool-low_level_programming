@@ -6,3 +6,4 @@ Various projects to work with variables and nested loops in C.
 3-islower.c -> Write a function that checks for lowercase characher;
 4-isalpha.c -> Write a function that checks for alphabetic charachter;
 5-sign.c -> Write a function that prints the sign of a number;
+6-abs.c -> Write a function that computes the absolute value of an integer;
