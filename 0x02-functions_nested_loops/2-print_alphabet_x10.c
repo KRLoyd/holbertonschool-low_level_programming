@@ -1,16 +1,15 @@
 #include "holberton.h"
 
 /**
- * main - Entry point
+ * print_alphabet_x10 - Entry point
  *
- * Return: 0 (Success)
  **/
 
-int main(void)
+void print_alphabet_x10(void)
 {
-	int i = '0', j;
+	int i = 0, j;
 
-	while (i <= '9')
+	while (i <= 9)
 	{
 		j = 'a';
 
@@ -22,5 +21,4 @@ int main(void)
 		_putchar('\n');
 		i++;
 	}
-	return (0);
 }
