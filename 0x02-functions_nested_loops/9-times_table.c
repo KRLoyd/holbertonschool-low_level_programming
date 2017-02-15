@@ -18,18 +18,18 @@ void times_table(void)
 		while (col < 10)
 		{
 			k = row * col;
-if (k <= 9)
+			if (k <= 9)
 			{
-					_putchar(',');
-					_putchar(' ');
-					_putchar(' ');
-			_putchar(k + '0');
+				_putchar(',');
+				_putchar(' ');
+				_putchar(' ');
+				_putchar(k + '0');
 			}
 			else
 			{
 				_putchar(',');
 				_putchar(' ');
-				_putchar(k /10 + '0');
+				_putchar(k / 10 + '0');
 				_putchar(k % 10 + '0');
 			}
 			col++;
