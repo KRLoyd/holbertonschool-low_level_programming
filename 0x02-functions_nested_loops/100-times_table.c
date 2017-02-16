@@ -1,7 +1,7 @@
 #include "holberton.h"
 /**
  * print_times_table - print times table of specified n
- *@n: times table to print
+ * @n: times table to print
  *
  * Return: void
  **/
