@@ -12,3 +12,4 @@ Various projects to work with variables and nested loops in C.
 10-add.c -> Write a function that adds two integer and returns the result;
 11-print_to_98.c -> Write a function that prints all natural numbers from n to 98, followed by a new line;
 9-times_table.c -> Write a function that prints the 9 times table, starting with 0;
+100-times_table.c -> Write a function that prints the n times table, starting with 0;
