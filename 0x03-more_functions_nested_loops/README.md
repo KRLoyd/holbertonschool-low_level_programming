@@ -5,3 +5,4 @@ More projects with funcitons and nested loops!
 2-mul.c -> Write a function that multiplies two integers;
 3-print_numbers.c -> Write a funciton that prints the numbers from 0 to 9;
 4-print_most_numbers.c -> Write a function that prints 0 to 9 except 2 and 4;
+5-more_numbers.c -> Write function that prints 0 to 14 ten times;
