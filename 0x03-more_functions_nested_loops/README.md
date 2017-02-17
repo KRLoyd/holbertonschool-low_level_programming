@@ -11,3 +11,4 @@ More projects with funcitons and nested loops!
 8-print-square.c -> Write a function that prints a square;
 9-fizz_buzz.c -> Fizz-Buzz test
 10-print_triangle -> Write a function that prints a triangle;
+101-print_number.c -> write a function that prints an integer;
