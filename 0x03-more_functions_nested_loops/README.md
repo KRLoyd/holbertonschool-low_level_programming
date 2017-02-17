@@ -8,3 +8,4 @@ More projects with funcitons and nested loops!
 5-more_numbers.c -> Write function that prints 0 to 14 ten times;
 6-print_line.c -> Write a function that draws a straight line in terminal;
 7-print_diagonal.c -> write a function to draw a diagonal line on terminal;
+8-print-square.c -> Write a function that prints a square;
