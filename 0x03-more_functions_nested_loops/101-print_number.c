@@ -12,7 +12,7 @@ void print_number(int n)
 		n = -n;
 	else
 		_putchar('-');
-	if (n <= -2147483648)
+	if (n <= -1000000000)
 		_putchar(n / -1000000000 + '0');
 	if (n <= -999999999)
 		_putchar(n / -100000000 % 10 + '0');
@@ -31,5 +31,5 @@ void print_number(int n)
 	if (n <= -9)
 		_putchar(n / -10 % 10 + '0');
 	if (n <= 0)
-		_putchar(n * -1 % 10 + '0');
+		_putchar((n  % 10) * -1 + '0');
 }
