@@ -10,4 +10,4 @@ More projects with funcitons and nested loops!
 7-print_diagonal.c -> write a function to draw a diagonal line on terminal;
 8-print-square.c -> Write a function that prints a square;
 9-fizz_buzz.c -> Fizz-Buzz test
- 
+10-print_triangle -> Write a function that prints a triangle;
