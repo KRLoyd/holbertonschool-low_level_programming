@@ -20,7 +20,7 @@ int main(void)
 	sum = first + second;
 
 	printf("1, 2");
-	for (i = 3; i <= 98; i++)
+	for (i = 2; i <= 98; i++)
 	{
 		sum = first + second;
 		printf(", %lu", sum);
