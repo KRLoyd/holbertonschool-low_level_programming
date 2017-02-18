@@ -16,4 +16,4 @@ Various projects to work with variables and nested loops in C.
 101-natural.c -> Write a program that computes and prints the sum of all the multiples of 3 or 5 below 1024 (excluded), followed by a new line;
 102-fibonacci.c -> Write a program that prints the first 50 Fibonacci numbers, starting with 1 and 2, followed by a new line;
 103-fibonacci.c -> Write a program that prints the sum of even-valued terms up to 4000000;
-
+104-fibonacci.c -> write a program to print the first 98 Fibonacci numbers;
