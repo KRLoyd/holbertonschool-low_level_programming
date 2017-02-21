@@ -11,13 +11,13 @@ void print_rev(char *s)
 	int i;
 	int c;
 
-/* count number of characters in array and save in value c */
 	while (s[c] != '\0')
 	{
 		c++;
 	}
 
-/* output the string of text, starting at value c */
+	c -= 1;
+
 	for (i = c; i >= 0; i--)
 	{
 		_putchar(s[i]);
