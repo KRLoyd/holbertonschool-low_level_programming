@@ -7,3 +7,4 @@ C programs to work with pointers, arrays, and strings.
 4-print_rev.c -> write a funciton that prints a string in reverse;
 5-rev_string.c -> write a function that reverses a string;
 6-puts2.c -> write a function that prints one char out of 2 of a string;
+7-puts_half.c -> write a function that prints the second half of a string;
