@@ -5,3 +5,4 @@ C programs to work with pointers, arrays, and strings.
 2-strlen.c -> write a funciton that returns the length of a string;
 3-puts.c -> write a fucntion that prints a string;
 4-print_rev.c -> write a funciton that prints a string in reverse;
+5-rev_string.c -> write a function that reverses a string;
