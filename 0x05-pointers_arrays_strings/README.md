@@ -9,3 +9,4 @@ More work with pointers, arrays, and strings.
 6-cap_string -> write a function to capitalize all words;
 7-leet.c -> write a function to encode a string in 1337;
 8-rot13.c -> write a function that encodes a string in rot13;
+100-print_number.c -> write a functions that prints an integer;
