@@ -15,9 +15,6 @@ char *cap_string(char *s)
 	{
 		switch (s[i])
 		{
-		case ' ':
-		case '\t':
-		case '\n':
 		case ',':
 		case ';':
 		case '.':
@@ -28,11 +25,14 @@ char *cap_string(char *s)
 		case ')':
 		case '{':
 		case '}':
-			if (s[i + 1] >= 'a' && s[i + 1] <= 'z')
+		case ' ':
+		case '\n':
+		case '\t':
+			if (s[i + 1] >= 97 && s[i + 1] <= 122)
 			{
 				s[i + 1] = s[i + 1] - 32;
 			}
 		}
 	}
-	return ((char *)s);
+	return (s);
 }
