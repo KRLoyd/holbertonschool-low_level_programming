@@ -1,20 +1,43 @@
 #include "holberton.h"
+
+/**
+ * _strlen - find the length of a string
+ * @s: string
+ *
+ * Return: length of s
+ **/
+
+int _strlen(char *s)
+{
+	int length;
+
+	length = 0;
+
+	while (*(s + length) != '\0')
+	{
+		length++;
+	}
+	length++;
+	return (length);
+}
+
 /**
  * _strchr - locate a character in a string
  * @s: string to evaluate
  * @c: character to locate
  *
- * Return: pointer to first occurance of character c in string s,
- * NULL if character c not found
+ * Return: pointer value of s
  **/
 
 char *_strchr(char *s, char c)
 {
-	int i;
+	int i, length;
 
-	for (i = 0; s[i] != '\0'; i++)
+	length = _strlen(s);
+
+	for (i = 0; i <= length; i++)
 	{
-		if (s[i] == c)
+		if (*(s + i) == c)
 		{
 			break;
 		}
