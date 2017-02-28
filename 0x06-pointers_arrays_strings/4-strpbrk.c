@@ -44,5 +44,5 @@ char *_strpbrk(char *s, char *accept)
 			}
 		}
 	}
-	return (s + length);
+	return ('\0');
 }
