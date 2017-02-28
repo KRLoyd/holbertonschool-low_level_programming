@@ -6,3 +6,4 @@ More pointers, arrays, and string practice!!!
 3-strspn.c -> write a function that gets the length of a prefix substring;
 4-strpbrk.c -> write a function hat searches a string for any of a set of bytes;
 5-strstr.c -> write a function that locates a substring;
+7-print_chessboard.c -> write a function that prints a chessboard;
