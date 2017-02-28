@@ -9,3 +9,4 @@ More pointers, arrays, and string practice!!!
 7-print_chessboard.c -> write a function that prints a chessboard;
 8-print_diagsums.c -> write function to print sums of diagonals of a
 square matrix;
+9-set_string.c -> write a function that sets the value of a pointer to a char;
