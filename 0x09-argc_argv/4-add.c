@@ -6,7 +6,7 @@
  * @argc: number of arguments passed to main
  * @argv: strings passed to main
  *
- * Reutrn: (0) Success, (1) Failure
+ * Return: (0) Success, (1) Failure
  **/
 
 int main(int argc, char *argv[])
