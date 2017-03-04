@@ -1,10 +1,10 @@
+#include "holberton.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
-#include "holberton.h"
 
 /**
- * _checkfornumber - check if a characher is a number
+ * _checkfornumber - check if a character is a number
  * @c: character to check
  *
  * Return: (0) Success, (1) Failure
@@ -45,6 +45,11 @@ int main(int argc, char *argv[])
 
 	result = 0;
 
+	if (argc == 1)
+	{
+		printf("0\n");
+		return (0);
+	}
 	for (i = 1 ; i < argc; i++)
 	{
 		if (_checkfornumber(argv[i]) == 0)
