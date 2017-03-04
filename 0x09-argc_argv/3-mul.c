@@ -10,7 +10,7 @@
  * Return: (0) Success, (1) Failure
  **/
 
-int main (int argc, char *argv[])
+int main(int argc, char *argv[])
 {
 	int mul;
 	int i;
