@@ -15,9 +15,7 @@ int _strlen(char *s)
 	i = 0;
 
 	while (s[i] != '\0')
-	{
 		i++;
-	}
 	return (i);
 }
 
@@ -61,16 +59,12 @@ char *str_concat(char *s1, char *s2)
 	if (len1 != 0)
 	{
 		for (i = 0; s1[i] != '\0'; i++)
-		{
 			p[i] = s1[i];
-		}
 	}
 	if (len2 != 0)
 	{
 		for (j = 0; s2[j] != '\0'; i++, j++)
-		{
 			p[i] = s2[j];
-		}
 	}
 	p[i] = '\0';
 
