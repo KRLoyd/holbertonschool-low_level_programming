@@ -36,6 +36,8 @@ char *str_concat(char *s1, char *s2)
 	int i, j, len1, len2, totlen;
 	char *p;
 
+	i = 0;
+	j = 0;
 
 	if (s1 != NULL)
 		len1 = _strlen(s1);
