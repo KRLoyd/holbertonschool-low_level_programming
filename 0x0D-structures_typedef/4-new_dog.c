@@ -21,7 +21,7 @@ int _strlen(char *s)
 }
 
 /**
- * new_strcpy - copy second string to puffer of first string
+ * new_strcpy - copy second string to buffer of first string
  * @dest: pointer to empty dest
  * @src: string to copy
  *
@@ -64,24 +64,32 @@ dog_t *new_dog(char *name, float age, char *owner)
 		free(good_boy);
 		return (NULL);
 	}
-
-	good_boy->name = malloc(lenn);
-	if (good_boy->name == NULL)
+	if (good_boy != NULL)
 	{
-		free(good_boy->name);
-		free(good_boy);
-		return (NULL);
+		good_boy->name = malloc(lenn);
+		if (good_boy->name == NULL)
+		{
+			free(good_boy->name);
+			free(good_boy);
+			return (NULL);
+		}
+		if (good_boy->name != NULL)
+		{
+			good_boy->owner = malloc(leno);
+			if (good_boy->owner == NULL)
+			{
+				free(good_boy->owner);
+				free(good_boy->name);
+				free(good_boy);
+				return (NULL);
+			}
+			if (good_boy->owner != NULL)
+			{
+				good_boy->age = age;
+				new_strcpy(good_boy->name, name);
+				new_strcpy(good_boy->owner, owner);
+			}
+		}
 	}
-	good_boy->owner = malloc(leno);
-	if (good_boy->owner == NULL)
-	{
-		free(good_boy->owner);
-		free(good_boy->name);
-		free(good_boy);
-		return (NULL);
-	}
-	good_boy->age = age;
-	new_strcpy(good_boy->name, name);
-	new_strcpy(good_boy->owner, owner);
 	return (good_boy);
 }
