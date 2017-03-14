@@ -2,47 +2,22 @@
 #include <stdlib.h>
 
 /**
- * new_dog - create a new dog
- * @name: name of dog
- * @age: age of dog
- * @owner: name of owner
+ * _strlen - return the length of a string
+ * @s: strint to evaluate
  *
- * Return: pointer to new struct dog_t (SUCCESS), NULL (FAILURE)
+ * Return: length of string
  **/
 
-dog_t *new_dog(char *name, float age, char *owner)
+int _strlen(char *s)
 {
-	dog_t *good_boy;
-	unsigned int lenn; /*length of name*/
-	unsigned int leno; /*length of owner*/
+	int i;
 
-	lenn = _strlen(name);
-	leno = _strlen(owner);
+	if (s == NULL)
+		return (0);
 
-	good_boy = malloc(sizeof(dog_t));
-	if (good_boy == NULL)
-	{
-		free(good_boy);
-		return (NULL);
-	}
-
-	good_boy->name = malloc(lenn);
-	if (good_boy->name == NULL)
-	{
-		free(good_boy);
-		return (NULL);
-	}
-	good_boy->owner = malloc(leno);
-	if (good_boy->owner == NULL)
-	{
-		free(good_boy->name);
-		free(good_boy);
-		return (NULL);
-	}
-	good_boy->age = age;
-	new_strcpy(good_boy->name, name);
-	new_strcpy(good_boy->owner, owner);
-	return (good_boy);
+	while (s[i] != '\0')
+		i++;
+	return (i);
 }
 
 /**
@@ -62,22 +37,51 @@ char *new_strcpy(char *dest, char *src)
 	return (dest);
 }
 
-
 /**
- * _strlen - return the length of a string
- * @s: strint to evaluate
+ * new_dog - create a new dog
+ * @name: name of dog
+ * @age: age of dog
+ * @owner: name of owner
  *
- * Return: length of string
+ * Return: pointer to new struct dog_t (SUCCESS), NULL (FAILURE)
  **/
 
-int _strlen(char *s)
+dog_t *new_dog(char *name, float age, char *owner)
 {
-	int i;
+	dog_t *good_boy;
+	unsigned int lenn; /*length of name*/
+	unsigned int leno; /*length of owner*/
 
-	if (s == NULL)
-		return (0);
+	lenn = _strlen(name);
+	leno = _strlen(owner);
 
-	while (s[i] != '\0')
-		i++;
-	return (i);
+	if (name == NULL || owner == NULL)
+		return (NULL);
+
+	good_boy = malloc(sizeof(dog_t));
+	if (good_boy == NULL)
+	{
+		free(good_boy);
+		return (NULL);
+	}
+
+	good_boy->name = malloc(lenn);
+	if (good_boy->name == NULL)
+	{
+		free(good_boy->name);
+		free(good_boy);
+		return (NULL);
+	}
+	good_boy->owner = malloc(leno);
+	if (good_boy->owner == NULL)
+	{
+		free(good_boy->owner);
+		free(good_boy->name);
+		free(good_boy);
+		return (NULL);
+	}
+	good_boy->age = age;
+	new_strcpy(good_boy->name, name);
+	new_strcpy(good_boy->owner, owner);
+	return (good_boy);
 }
