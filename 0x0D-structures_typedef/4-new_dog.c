@@ -11,12 +11,12 @@
 int _strlen(char *s)
 {
 	int i;
-
-	if (s == NULL)
-		return (0);
+	
+	i = 0;
 
 	while (s[i] != '\0')
 		i++;
+	i++; /* add 1 to account for '\0' */
 	return (i);
 }
 
@@ -69,7 +69,6 @@ dog_t *new_dog(char *name, float age, char *owner)
 		good_boy->name = malloc(lenn);
 		if (good_boy->name == NULL)
 		{
-			free(good_boy->name);
 			free(good_boy);
 			return (NULL);
 		}
@@ -78,7 +77,6 @@ dog_t *new_dog(char *name, float age, char *owner)
 			good_boy->owner = malloc(leno);
 			if (good_boy->owner == NULL)
 			{
-				free(good_boy->owner);
 				free(good_boy->name);
 				free(good_boy);
 				return (NULL);
