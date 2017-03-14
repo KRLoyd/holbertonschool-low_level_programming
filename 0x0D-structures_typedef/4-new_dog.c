@@ -11,7 +11,7 @@
 int _strlen(char *s)
 {
 	int i;
-	
+
 	i = 0;
 
 	while (s[i] != '\0')
@@ -61,16 +61,14 @@ dog_t *new_dog(char *name, float age, char *owner)
 	good_boy = malloc(sizeof(dog_t));
 	if (good_boy == NULL)
 	{
-		free(good_boy);
-		return (NULL);
+		free(good_boy); return (NULL);
 	}
 	if (good_boy != NULL)
 	{
 		good_boy->name = malloc(lenn);
 		if (good_boy->name == NULL)
 		{
-			free(good_boy);
-			return (NULL);
+			free(good_boy); return (NULL);
 		}
 		if (good_boy->name != NULL)
 		{
