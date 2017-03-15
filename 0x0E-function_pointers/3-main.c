@@ -2,14 +2,21 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main(int argc,char *argv[])
+/**
+ * main - Entry point
+ * @argc: number of arguments passed
+ * @argv: array of arguments passed
+ * Return: 0
+ **/
+
+int main(int argc, char *argv[])
 {
 	int answer;
 
 	if (argc != 4)
 	{
 		printf("Error\n");
-		exit (98);
+		exit(98);
 	}
 
 

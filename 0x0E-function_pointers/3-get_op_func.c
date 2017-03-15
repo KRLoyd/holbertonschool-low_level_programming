@@ -3,6 +3,13 @@
 #include <stdlib.h>
 #include <string.h>
 
+/**
+ * get_op_func - get correct ops function
+ * @s: operator passed
+ *
+ * Return: function to use based on operator
+ **/
+
 int (*get_op_func(char *s))(int, int)
 {
 	op_t ops[] = {
@@ -23,5 +30,5 @@ int (*get_op_func(char *s))(int, int)
 		i++;
 	}
 	printf("Error\n");
-	exit (99);
+	exit(99);
 }
