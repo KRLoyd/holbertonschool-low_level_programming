@@ -9,3 +9,5 @@ Tasks:
 1-string_nconcat.c -> write a function that concatenates two strings;
 2-calloc.c -> write a function that allocates memory for an array, using malloc;
 3-array_range.c -> write a function that creates an array of integers;
+100-realloc.c -> write a function that reallocates a memory block;
+101-mul.c -> write a program that multiplies 2 positive numbers;
