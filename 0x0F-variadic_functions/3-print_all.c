@@ -54,7 +54,7 @@ void print_string(char *sep, va_list alist)
 	s = va_arg(alist, char *);
 	if (s == NULL)
 	{
-		printf("(nil)");
+		s = "(nil)";
 	}
 	printf("%s%s", sep, s);
 }
