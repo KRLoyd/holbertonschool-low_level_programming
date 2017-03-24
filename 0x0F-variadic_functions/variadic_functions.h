@@ -8,7 +8,7 @@ void print_numbers(const char *separator, const unsigned int n, ...);
 void print_strings(const char *separator, const unsigned int n, ...);
 void print_all(const char * const format, ...);
 /**
- * _find_type - find the type of printf to use
+ * struct _find_type - find the type of printf to use
  * @c: character to look for
  * @f: printf function to use
  */
