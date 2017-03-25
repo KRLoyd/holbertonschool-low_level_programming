@@ -9,7 +9,7 @@
 size_t print_list(const list_t *h)
 {
 	unsigned int totel;
-	const struct list_t *temp;
+	const struct list_s *temp;
 
 	totel = 0;
 	temp = h;
