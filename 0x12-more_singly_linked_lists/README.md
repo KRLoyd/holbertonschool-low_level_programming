@@ -23,11 +23,11 @@ typedef struct listint_s
 ```
 
 #### Compilation
-All programs and functions should be compiled with `gcc 4.8.4`(`C90`). 
-Specifically, `gcc -Wall -Werror -Wextra -pedantic`. 
+All programs and functions should be compiled with `gcc 4.8.4`(`C90`).
+Specifically, `gcc -Wall -Werror -Wextra -pedantic`.
 
 #### Style
-All files are written in the Holberton/Betty style. 
+All files are written in the Holberton/Betty style.
 More information on this style can be found at https://github.com/holbertonschool/Betty/wiki
 
 ## Files
@@ -65,16 +65,16 @@ Function that adds a new node at the end of a `listint_t` list.
 Function that frees a `listint_t` list.
 * Prototype: `void free_listint(listint_t *head);`
 	* @head: `listint_t` list to evaluate
-To check if memory has been free'd properly, use `valgrind ./file_name`. 
+To check if memory has been free'd properly, use `valgrind ./file_name`.
 	If memory was free'd you will this message in the HEAP SUMMARY: `All heap blocks were freed -- no leaks are possible`
 
 ##### `5-free_listint2.c`
 Function that frees a `listint_t` list and sets `head` to `NULL`.
 * Prototype: `void free_listint2(listint_t **head);`
 	* @head: `listint_t` list to free
-To check if memory has been free'd properly, use `valgrind ./file_name`. 
+To check if memory has been free'd properly, use `valgrind ./file_name`.
 	If memory was free'd you will this message in the HEAP SUMMARY: `All heap blocks were freed -- no leaks are possible`
-	
+
 ##### `6-pop_listint.c`
 Function that deletes the head node of a `listint_t` list.
 * Prototype: `int pop_listint(listint_t **head);`
