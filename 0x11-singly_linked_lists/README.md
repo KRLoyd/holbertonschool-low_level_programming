@@ -40,7 +40,7 @@ Function that prints all the elements of a `list_t` list.
 	* @h: `list_t` list to evaluate
 	* Return: number of nodes in the list
 
-#### `1-list_len.c`	
+#### `1-list_len.c`
 Function that counts the number of elements in a `list_t`list.
 * Prototype: `size_t list_len(const list_t *h);`
 	* @h: `list_t` list to evaluate
@@ -68,5 +68,5 @@ To check if memory has been free'd properly, use `valgrind ./file_name`.
 	If memory was free'd you will this message in the HEAP SUMMARY: `All heap blocks were freed -- no leaks are possible`
 
 #### `100-first.c`
-Function that prints a specific string before the `main` function is executed. 
+Function that prints a specific string before the `main` function is executed.
 * String to print: `You're beat! and yet, you must allow,\nI bore my house upon my back!\n`
