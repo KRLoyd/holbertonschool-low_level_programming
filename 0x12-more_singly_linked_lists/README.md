@@ -122,4 +122,4 @@ Function that reverses a `listint_t` list.
 Function that prints a `listint_t` list. The list may have a loop, but only prints it once.
 * Prototype: `size_t print_listint_safe(const listint_t *head);`
 	* @head: list to print
-	* Return: number of nodes in the list, exit status `98` upon failure
+	* Return: number of nodes in the list
