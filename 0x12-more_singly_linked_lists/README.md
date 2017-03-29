@@ -4,6 +4,10 @@
 * More practice with linked lists
 
 ### Project Notes
+#### Environment
+These functions have been tested on Ubuntu 14.05.5 LTS.
+Tests done in VirtualBox on Ubuntu via Vagrant(1.8.6).
+
 #### Data Structure
 The following data structure was provided by Holberton School for this project:
 ```
