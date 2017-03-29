@@ -10,9 +10,6 @@ size_t print_listint_safe(const listint_t *head)
 	const listint_t *ptr, *check;
 	unsigned int counter, loop;
 
-	if (head == NULL)
-		exit(98);
-
 	ptr = head;
 	counter = 0;
 
