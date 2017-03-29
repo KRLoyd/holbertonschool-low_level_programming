@@ -29,7 +29,7 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 		return (1);
 	}
 
-	while (i < (index -1))
+	while (i < (index - 1))
 	{
 		if (ptr->next == NULL)
 			return (-1);
@@ -47,5 +47,5 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 	ptr->next = temp->next;
 	free(temp);
 
-  	return (1);
+	return (1);
 }
