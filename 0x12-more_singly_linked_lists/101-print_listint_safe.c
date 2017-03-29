@@ -11,7 +11,7 @@ size_t print_listint_safe(const listint_t *head)
 	unsigned int counter, loop;
 
 	if (head == NULL)
-		exit (98);
+		exit(98);
 
 	ptr = head;
 	counter = 0;
@@ -28,7 +28,7 @@ size_t print_listint_safe(const listint_t *head)
 			if (ptr->next == check)
 			{
 				printf("[%p] %d\n", (void *)ptr, ptr->n);
-				printf ("-> [%p] %d\n", (void *)check, check->n);
+				printf("-> [%p] %d\n", (void *)check, check->n);
 				return (counter);
 			}
 			check = check->next;
