@@ -107,3 +107,16 @@ Function that deletes the node at index `index` of a `listint_t` list.
 	* @head: `listint_t` list to evaluate
 	* @index: index of the node that should be deleted, index of `listint_t` lists starts at `0`
 	* Return: 1 (SUCCESS), -1 (FAILURE)
+
+##### `100-reverse_listint.c`
+Function that reverses a `listint_t` list.
+* Prototype: `listint_t *reverse_listint(listint_t **head);`
+	* @head: `listint_t` list to reverse
+	* Return: pointer to the first node of the reversed list
+
+##### ***NOT COMPLETED*** `101-print_listint_safe.c`
+Function that prints a `listint_t` list. The list may have a loop, but only prints it once. 
+* Prototype: `size_t print_listint_safe(const listint_t *head);`
+	* @head: list to print
+	* Return: number of nodes in the list, exit status `98` upon failure
+
