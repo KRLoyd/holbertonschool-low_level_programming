@@ -22,11 +22,6 @@ unsigned int binary_to_uint(const char *b)
 		num <<= 1;
 		if (b[i] == '1')
 		{
-			while (num & flip)
-			{
-				num = num ^ flip;
-				flip <<= 1;
-			}
 			num = num ^ flip;
 		}
 	}
