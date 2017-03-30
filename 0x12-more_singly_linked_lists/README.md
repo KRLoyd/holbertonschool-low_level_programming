@@ -123,3 +123,7 @@ Function that prints a `listint_t` list. The list may have a loop, but only prin
 * Prototype: `size_t print_listint_safe(const listint_t *head);`
 	* @head: list to print
 	* Return: number of nodes in the list
+
+##### **NOT COMPLETED** `102-free_listint_safe.c`
+Function that frees a `listint_t` list. The list may have a loop.
+* Prototype: `size_t free_listint_safe(listint_t **h);`
