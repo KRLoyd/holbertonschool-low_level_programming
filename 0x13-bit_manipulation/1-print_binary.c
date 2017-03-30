@@ -10,9 +10,11 @@ void print_binary(unsigned long int n)
 	unsigned long int copy;
 	int bitpl, compare;
 
+	bitpl = (sizeof(unsigned long int) * 8) - 1;
+
 	if (n == 0)
 		_putchar ('0');
-	for (bitpl = 31; bitpl >= 0; bitpl--)
+	for (; bitpl >= 0; bitpl--)
 	{
 		copy = n >> bitpl;
 		if (copy & 1)
