@@ -11,7 +11,7 @@ int get_endianness(void)
 	num = 1;
 
 	if (num & 1)
-		return (0);
-	else
 		return (1);
+	else
+		return (0);
 }
