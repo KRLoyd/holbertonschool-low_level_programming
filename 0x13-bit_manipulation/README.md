@@ -59,3 +59,8 @@ Function that returns the number of bits needed to flip to get from one number t
 	* @n: first number
 	* @m: second number
 	* Return: number of bits that would need to be flipped
+
+##### `100-get_endianness.c`
+Function that finds endianness.
+* Prototype: `int get_endianness(void);`
+  * Return: `0` if big endian, `1` if little endian
