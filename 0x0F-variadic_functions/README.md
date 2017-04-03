@@ -51,4 +51,4 @@ Function that prints anything.
 	* `c`: char
 	* `i`: integer
 	* `f`: float
-	* `s`: char * (if the string is `NULL`, `(nil)` is printed. 
+	* `s`: char * (if the string is `NULL`, `(nil)` is printed.
