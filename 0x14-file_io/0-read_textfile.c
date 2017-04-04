@@ -36,9 +36,19 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		free(print_this);
 		return (0);
 	}
-	w_result = write(1, print_this, letters);
-	if (w_result == -1 || (size_t)w_result != letters)
+	if (r_result > 0)
+		w_result = write(STDOUT_FILENO, print_this, letters);
+	if (w_result < r_result)
+	{
+		free(print_this);
 		return (0);
+	}
+	w_result = close(fd);
+	if (w_result < 0)
+	{
+		free(print_this);
+		return (0);
+	}
 	free(print_this);
 	return (r_result);
 }
