@@ -17,7 +17,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 {
 	int fd;
 	char *print_this;
-	ssize_t r_result, w_result;
+	ssize_t r_result, w_result, c_result;
 
 	if (filename == NULL)
 		return (0);
@@ -36,15 +36,14 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		free(print_this);
 		return (0);
 	}
-	if (r_result > 0)
-		w_result = write(STDOUT_FILENO, print_this, letters);
-	if (w_result < r_result)
+	w_result = write(STDOUT_FILENO, print_this, r_result);
+	if (w_result < 0)
 	{
 		free(print_this);
 		return (0);
 	}
-	w_result = close(fd);
-	if (w_result < 0)
+	c_result = close(fd);
+	if (c_result < 0)
 	{
 		free(print_this);
 		return (0);
