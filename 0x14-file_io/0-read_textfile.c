@@ -12,6 +12,7 @@
  * Return: number of letters read and printed (SUCCESS)
  * 0 if file cannot be opened or read,
  * or if write fails or doesn't print the number of expected bytes (FAILURE)
+ * -1 if malloc fails to create space
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
@@ -23,7 +24,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 	print_this = malloc(sizeof(char) * letters);
 	if (print_this == NULL)
-		return (0);
+		return (-1);
 	fd = open(filename, O_RDONLY);
 	if (fd == -1)
 	{
