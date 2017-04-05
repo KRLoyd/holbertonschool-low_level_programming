@@ -32,19 +32,23 @@ int main(int argc, char *argv[])
 	fd_from = open(argv[1], O_RDONLY);
 	if (fd_from < 0)
 		read_error(argv[1]);
-	fd_to = open(argv[2], O_RDWR | O_CREAT | O_TRUNC, mode);
+	fd_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, mode);
 	if (fd_to < 0)
-		return (-1);
+		write_error(argv[2]);
 
 	buffer = malloc(sizeof(char) * BUFSIZE);
 	if (buffer == NULL)
 		return (-1);
 	fdf_r = read(fd_from, buffer, BUFSIZE);
-	if (fdf_r < 0)
-		read_error(argv[1]);
-	fdt_w = write(fd_to, buffer, fdf_r);
-	if (fdt_w < 0)
-		write_error(argv[2]);
+	while (fdf_r)
+	{
+		if (fdf_r < 0)
+			read_error(argv[1]);
+		fdt_w = write(fd_to, buffer, fdf_r);
+		if (fdt_w < 0)
+			write_error(argv[2]);
+		fdf_r = read(fd_from, buffer, BUFSIZE);
+	}
 	fdf_c = close(fd_from);
 	if (fdf_c < 0)
 		close_error(fd_from);
