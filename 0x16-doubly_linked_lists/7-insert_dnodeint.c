@@ -29,17 +29,19 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 /* Traverse the linked list to get to idx */
 	while (ptr != NULL)
 	{
+/* If idx is found, update pointers and return */
 		if (idx == node_num + 1)
-			break;
+		{
+			printf("ptr->n: %d\n", ptr->n);
+			printf("idx: %d\nnode_num: %d\n", idx, node_num);
+			new_node->prev = ptr->prev;
+			new_node->next = ptr->next;
+			ptr->next = new_node;
+			return (new_node);
+		}
 		ptr = ptr->next;
 		node_num++;
 	}
-	printf("ptr->n: %d\n", ptr->n);
-	printf("idx: %d\nnode_num: %d\n", idx, node_num);
-
-	new_node->prev = ptr->prev;
-	new_node->next = ptr->next;
-	ptr->next = new_node;
-	new_node->next->prev = new_node;
-	return (new_node);
+/* If idx not found, return NULL */
+	return (NULL);
 }
