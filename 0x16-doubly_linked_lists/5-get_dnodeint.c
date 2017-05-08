@@ -9,7 +9,7 @@
 dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 {
 
-	unsigned int total_nodes, i;
+	unsigned int i;
 	dlistint_t *ptr;
 
 	i = 0;
@@ -18,17 +18,14 @@ dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 /* Check if head == NULL */
 	if (head == NULL)
 		return (NULL);
-/* Find number of nodes in list */
-	total_nodes = dlistint_len(head);
-/* Compare index to number of nodes */
-	if (index > total_nodes)
-		return (NULL);
-/* Traverse the list to index */
-	while (i < index)
+/* Traverse the list to index and return if index exists */
+	while (ptr != NULL)
 	{
+		if (index == i)
+			return (ptr);
 		ptr = ptr->next;
 		i++;
 	}
-/* Return node at index */
-	return (ptr);
+/* Return NULL if index not found */
+	return (NULL);
 }
