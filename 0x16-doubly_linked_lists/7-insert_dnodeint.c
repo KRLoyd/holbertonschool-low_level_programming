@@ -9,36 +9,37 @@
  **/
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
-	size_t total_nodes;
+/*	size_t total_nodes;*/
 	dlistint_t *new_node;
 	dlistint_t *ptr;
-	unsigned int i;
+	unsigned int node_num;
 
 	ptr = *h;
-	i = 0;
+	node_num = 0;
 
-/* find number of nodes in the list */
-	total_nodes = dlistint_len(ptr);
-/* check that index is not more than number of nodes */
-	if (idx > total_nodes)
-		return (NULL);
-/* create new node */
+/* Check if h and *h are NULL */
+	if (h == NULL || *h == NULL)
+		return NULL;
+/* Create new node */
 	new_node = malloc(sizeof(dlistint_t));
 	if (new_node == NULL)
 		return (NULL);
-/* add data to new node */ 
+/* Add data to new node */ 
 	new_node->n = n;
 /* Traverse the linked list to get to idx */
-	while (i < idx - 1)
+	while (ptr != NULL)
 	{
+		if (idx == node_num + 1)
+			break;
 		ptr = ptr->next;
-		i++;
+		node_num++;
 	}
-/* set new node's next to ptr's next */
+	printf("ptr->n: %d\n", ptr->n);
+	printf("idx: %d\nnode_num: %d\n", idx, node_num);
+
+	new_node->prev = ptr->prev;
 	new_node->next = ptr->next;
-/* set new node's prev to ptr */
-	new_node->prev = ptr;
-/* set ptr's next to new node */
 	ptr->next = new_node;
+	new_node->next->prev = new_node;
 	return (new_node);
 }
