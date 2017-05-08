@@ -8,13 +8,11 @@
  **/
 int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 {
-
 /* Check if head and *head are NULL */
-
+	if (head != NULL || *head != NULL)
+		return (-1);
+/* If index == 0 */
+/* Is this the only link? */
 /* Traverse the list */
-
-/* If find index - 1 */
-/* If ptr != NULL */
-
-
+/* Is it the last link? */
 }
