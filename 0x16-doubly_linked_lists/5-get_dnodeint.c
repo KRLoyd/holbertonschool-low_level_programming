@@ -29,15 +29,15 @@ dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 	}
 /* Traverse the list to index */
 	printf("before while loop\n");
-	while (i <= index)
+	while (i < index)
 	{
 		printf("Inside while loop\n");
 		printf("i: %d\nptr->n: %d\n", i, ptr->n);
 		ptr = ptr->next;
 		i++;
 	}
-
+		printf("i: %d\nptr->n: %d\n", i, ptr->n);
 /* Return node at index */
 
-	return (0);
+	return (ptr);
 }
