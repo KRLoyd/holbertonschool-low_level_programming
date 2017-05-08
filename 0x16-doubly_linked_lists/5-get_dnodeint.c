@@ -9,4 +9,12 @@
 dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 {
 
+/* Find number of nodes in list */
+
+/* Compare index to number of nodes */
+
+/* Traverse the list to index */
+
+/* Return node at index */
+
 }
