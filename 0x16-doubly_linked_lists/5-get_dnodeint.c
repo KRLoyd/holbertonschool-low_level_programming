@@ -14,6 +14,10 @@ dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 
 	i = 0;
 	ptr = head;
+
+/* Check if head == NULL */
+	if (head == NULL)
+		return (NULL);
 /* Find number of nodes in list */
 	total_nodes = dlistint_len(head);
 /* Compare index to number of nodes */
