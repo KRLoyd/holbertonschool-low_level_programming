@@ -9,8 +9,11 @@
 dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 {
 
-	unsigned int total_nodes;
+	unsigned int total_nodes, i;
+	dlistint_t *ptr;
 
+	i = 0;
+	ptr = head;
 	printf("Index: %d\n", index);
 	printf("Before finding number of nodes\n");
 /* Find number of nodes in list */
@@ -25,6 +28,14 @@ dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 		return (NULL);
 	}
 /* Traverse the list to index */
+	printf("before while loop\n");
+	while (i <= index)
+	{
+		printf("Inside while loop\n");
+		printf("i: %d\nptr->n: %d\n", i, ptr->n);
+		ptr = ptr->next;
+		i++;
+	}
 
 /* Return node at index */
 
