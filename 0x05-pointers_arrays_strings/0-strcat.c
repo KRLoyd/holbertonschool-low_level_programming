@@ -15,12 +15,13 @@ char *_strcat(char *dest, char *src)
 
 	i = 0;
 	length = 0;
-
+	/* find the length of dest */
 	while (dest[length] != '\0')
 	{
 		length++;
 	}
-
+	
+	/* Copy src to dest, overwriting dest's Null teminator */
 	for (i = 0, j = length; src[i] != '\0'; i++, j++)
 	{
 		dest[j] = src[i];
