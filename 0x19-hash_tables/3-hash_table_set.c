@@ -34,18 +34,23 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		new_node = add_hash_node(ptr, key, value);
 		if (new_node == NULL)
 			return (0);
+		/* set index head to new_node */
+		ht->array[index] = new_node;
 		return (1);
 	}
 	/* if there are collisions */
 	key_check = check_for_key(ptr, key, value);
 	if (key_check == 1)
 		return (1);
+
 	/* if key doesn't exist, add it */
 	else if (key_check == 0)
 	{
 		new_node = add_hash_node(ptr, key, value);
 		if (new_node == NULL)
 			return (0);
+		/* set index head to new_node */
+		ht->array[index] = new_node;
 		return (1);
 	}
 	else
@@ -78,7 +83,7 @@ unsigned int check_for_collision(hash_node_t *ptr)
 unsigned int check_for_key(hash_node_t *ptr, const char *key, const char *value)
 {
 	hash_node_t *temp;
-	
+
 	temp = ptr;
 	while (temp != NULL)
 	{
@@ -103,7 +108,10 @@ unsigned int check_for_key(hash_node_t *ptr, const char *key, const char *value)
 hash_node_t *add_hash_node(hash_node_t *ptr, const char *key, const char *value)
 {
 	hash_node_t *new_node;
-	
+	hash_node_t *temp;
+
+	temp = ptr;
+
 	/* allocate memory for new_node */
 	new_node = malloc(sizeof(hash_node_t));
 	/* check if new_node was created */
@@ -112,8 +120,6 @@ hash_node_t *add_hash_node(hash_node_t *ptr, const char *key, const char *value)
 
 	new_node->key = strdup(key);
 	new_node->value = strdup(value);
-	new_node->next = ptr;
-	ptr = new_node;
-
+	new_node->next = temp;
 	return (new_node);
 }
