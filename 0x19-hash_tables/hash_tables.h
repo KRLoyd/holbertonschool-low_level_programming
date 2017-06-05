@@ -41,4 +41,5 @@ unsigned int check_for_key(hash_node_t *ptr,
 			   const char *key, const char *value);
 hash_node_t *add_hash_node(hash_node_t *ptr,
 			   const char *key, const char *value);
+char *hash_table_get(const hash_table_t *ht, const char *key);
 #endif /* __HASH_TABLES_6317__ */
