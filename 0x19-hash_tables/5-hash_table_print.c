@@ -7,12 +7,15 @@
 void hash_table_print(const hash_table_t *ht)
 {
 	unsigned int index;
-	int used_table_size;
+	int used_table_size, checker;
 	hash_node_t *list_ptr;
 	hash_node_t *array_ptr;
 
+
 	if (ht == NULL)
 		return;
+
+	checker = 0;
 	/* find number of non-NULL lists in array */
 	for (used_table_size = 0, index = 0, array_ptr = ht->array[index];
 	     index < ht->size;)
@@ -33,17 +36,26 @@ void hash_table_print(const hash_table_t *ht)
 	{
 		if (index == 0)
 			printf("{");
+		if (ht->array[index] != NULL)
+			used_table_size -= 1;
+
 		/* loop through the nodes in the linked list */
 		for (list_ptr = ht->array[index];
 		     list_ptr != NULL; list_ptr = list_ptr->next)
 		{
-			printf("'%s': '%s'", list_ptr->key, list_ptr->value);
-			if (used_table_size > 0 && list_ptr->next != NULL)
+			/* NEW CODE */
+			if (checker == 1)
 				printf(", ");
+			printf("'%s': '%s'", list_ptr->key, list_ptr->value);
+			/* DANGER ZONE */
+			/* if (used_table_size > 0 && list_ptr->next != NULL) */
+			/* 	printf(", "); */
+			checker = 1;
 		}
+		/* DANGER ZONE */
+		/* if (used_table_size > 0 && list_ptr->next != NULL) */
+		/* 	printf(", "); */
 		if (index == ht->size - 1)
 			printf("}\n");
-		if (ht->array[index] != NULL)
-			used_table_size -= 1;
 	}
 }
