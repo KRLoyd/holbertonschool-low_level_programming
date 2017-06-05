@@ -16,21 +16,17 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	hash_node_t *new_node;
 	unsigned int collision_check, key_check;
 
-	/* check if key or value is NULL */
 	if ((ht == NULL) || (key == NULL) || (value == NULL)
 	    || (strlen(key) == 0))
 		return (0);
 
-	/* get the index using the djb2 code */
 	index = key_index((const unsigned char *)key, (unsigned long int) ht->size);
-	/* go to index in hash table, check if index is empty / for colisions */
+
 	ptr = ht->array[index];
-	/* if there are collisions*/
 	collision_check = check_for_collision(ptr);
 	/* if no collisions */
 	if (collision_check == 0)
 	{
-		/* add new node */
 		new_node = add_hash_node(ptr, key, value);
 		if (new_node == NULL)
 			return (0);
@@ -80,7 +76,8 @@ unsigned int check_for_collision(hash_node_t *ptr)
  * @value: value to update key's value if key is found
  * Return: 0 (key doesn't exist), 1 (key does exist)
  */
-unsigned int check_for_key(hash_node_t *ptr, const char *key, const char *value)
+unsigned int check_for_key(hash_node_t *ptr,
+			   const char *key, const char *value)
 {
 	hash_node_t *temp;
 
@@ -105,16 +102,16 @@ unsigned int check_for_key(hash_node_t *ptr, const char *key, const char *value)
  * @value: value to be associated with key
  * Return: pointer to the new_node (SUCCESS), NULL (FAILURE)
  */
-hash_node_t *add_hash_node(hash_node_t *ptr, const char *key, const char *value)
+hash_node_t *add_hash_node(hash_node_t *ptr,
+			   const char *key, const char *value)
 {
 	hash_node_t *new_node;
 	hash_node_t *temp;
 
 	temp = ptr;
 
-	/* allocate memory for new_node */
 	new_node = malloc(sizeof(hash_node_t));
-	/* check if new_node was created */
+
 	if (new_node == NULL)
 		return (NULL);
 
