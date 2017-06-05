@@ -43,18 +43,11 @@ void hash_table_print(const hash_table_t *ht)
 		for (list_ptr = ht->array[index];
 		     list_ptr != NULL; list_ptr = list_ptr->next)
 		{
-			/* NEW CODE */
 			if (checker == 1)
 				printf(", ");
 			printf("'%s': '%s'", list_ptr->key, list_ptr->value);
-			/* DANGER ZONE */
-			/* if (used_table_size > 0 && list_ptr->next != NULL) */
-			/* 	printf(", "); */
 			checker = 1;
 		}
-		/* DANGER ZONE */
-		/* if (used_table_size > 0 && list_ptr->next != NULL) */
-		/* 	printf(", "); */
 		if (index == ht->size - 1)
 			printf("}\n");
 	}
