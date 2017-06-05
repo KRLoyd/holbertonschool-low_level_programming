@@ -22,7 +22,7 @@ typedef struct hash_node_s
  *
  * @size: The size of the array
  * @array: An array of size @size
- * Each cell of this array is a pointer to the first node of a linked list, 
+ * Each cell of this array is a pointer to the first node of a linked list,
  * because we want our HashTable to use a Chaining collision handling
  */
 typedef struct hash_table_s
@@ -37,6 +37,8 @@ unsigned long int hash_djb2(const unsigned char *str);
 unsigned long int key_index(const unsigned char *key, unsigned long int size);
 int hash_table_set(hash_table_t *ht, const char *key, const char *value);
 unsigned int check_for_collision(hash_node_t *ptr);
-unsigned int check_for_key(hash_node_t *ptr, const char *key, const char *value);
-hash_node_t *add_hash_node(hash_node_t *ptr, const char *key, const char *value);
+unsigned int check_for_key(hash_node_t *ptr,
+			   const char *key, const char *value);
+hash_node_t *add_hash_node(hash_node_t *ptr,
+			   const char *key, const char *value);
 #endif /* __HASH_TABLES_6317__ */
