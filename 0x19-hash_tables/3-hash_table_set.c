@@ -80,13 +80,18 @@ unsigned int check_for_key(hash_node_t *ptr,
 			   const char *key, const char *value)
 {
 	hash_node_t *temp;
+	char *value_to_free;
 
 	temp = ptr;
 	while (temp != NULL)
 	{
 		if (strcmp(temp->key, key) == 0)
 		{
+			value_to_free = temp->value;
 			temp->value = strdup(value);
+			if (temp->value == NULL)
+				free(temp->value);
+			free(value_to_free);
 			return (1);
 		}
 		temp = temp->next;
@@ -115,8 +120,15 @@ hash_node_t *add_hash_node(hash_node_t *ptr,
 	if (new_node == NULL)
 		return (NULL);
 
+
 	new_node->key = strdup(key);
+	if (new_node->key == NULL)
+		free(new_node->key);
+
+
 	new_node->value = strdup(value);
+	if (new_node->value == NULL)
+		free(new_node->value);
 	new_node->next = temp;
 	return (new_node);
 }
