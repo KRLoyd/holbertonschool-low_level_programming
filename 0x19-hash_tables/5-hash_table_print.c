@@ -11,7 +11,7 @@ void hash_table_print(const hash_table_t *ht)
 	hash_node_t *l_ptr;
 	hash_node_t *array_ptr;
 
-	if (ht == NULL)
+	if (ht->array == NULL || ht == NULL)
 		return;
 	checker = 0;
 	for (used_table_size = 0, i = 0; i < ht->size;)
@@ -19,8 +19,9 @@ void hash_table_print(const hash_table_t *ht)
 		array_ptr = ht->array[i];
 		if (array_ptr != NULL)
 			used_table_size++;
-		i++;
+
 		array_ptr = ht->array[i];
+		i++;
 	}
 	if (used_table_size == 0)
 	{
