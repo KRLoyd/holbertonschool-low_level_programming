@@ -16,3 +16,5 @@
 12. 0x0C. C - Preprocessor
 13. 0x0D. C - Structures, typedef
 14. 0x0E. C - Function pointers
+15. 0x0F. C - Variadic functions
+16. 0x1B. C - Makefiles
