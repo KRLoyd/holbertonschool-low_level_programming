@@ -50,7 +50,7 @@ typedef struct hash_table_s
 } hash_table_t;
 ```
 
- 
+
 ## Files
 
 [0-hash_table_create.c](0-hash_table_create.c)
@@ -58,7 +58,7 @@ typedef struct hash_table_s
 Function that created a hash table
 * Prototype: `hash_table_t *hash_table_create(unsigned long int size);`
 	* @size: size of the array
-	* Return: 
+	* Return:
         * Success: pointer to the newly created hash table
         * Failure: `NULL`
 
