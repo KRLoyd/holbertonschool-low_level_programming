@@ -18,7 +18,7 @@ All C code is written in Betty style. Information about this style can be found 
 
 [holberton.h](holberton.h)
 
-Holds the following prototypes: 
+Holds the following prototypes:
 ```
 int _putchar(char c);
 int _islower(int c);
