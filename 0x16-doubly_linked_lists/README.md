@@ -14,7 +14,7 @@ All programs and functions are compiled with `gcc -Wall -Werror -Wextra -pedanti
 #### Style
 All code is written in Betty style. Information about this style can be found [here](https://github.com/holbertonschool/Betty/wiki).
 
-Protoypes of all functions used are included in header file `lists.h`. The following data structure found in `lists.h` was provided by Holberton School. 
+Protoypes of all functions used are included in header file `lists.h`. The following data structure found in `lists.h` was provided by Holberton School.
 ```
 /**
  * struct dlistint_s - doubly linked list
