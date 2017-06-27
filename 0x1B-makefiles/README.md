@@ -84,7 +84,7 @@ Holberton School provided the following files to be used by my makefiles.
 
 [100-Makefile](100-Makefile)
 * Notes:
-    * `100-Makefiel` works even if there are files in the directory that have the same name as rules. 
+    * `100-Makefiel` works even if there are files in the directory that have the same name as rules.
     * Makefile will not compile if the header file is missing.
 * Rules:
     * `all` : bulds the `holberton` executable
