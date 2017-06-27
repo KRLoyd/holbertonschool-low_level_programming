@@ -23,7 +23,7 @@ All code is written in Betty style. Information about this style can be found [h
 
 Protoypes of all functions used are included in header file `holberton.h`
 
- 
+
 ## Files
 All files must be executable to run. To add executable permissions to any file: `chmod u+x file_name`
 
@@ -42,7 +42,7 @@ Function that reads a text file and prints it to the `POSIX` standard output.
 Function that creates a file with the permissions `rw-------`. If the file exists, truncate it and do not change the permissions.
 * Prototype: `int create_file(const char *filename, char *text_content);`
 	* @filename: name of the file to create
-	* @text_content: `NULL` terminated string to write to 'filename'. 
+	* @text_content: `NULL` terminated string to write to 'filename'.
 		* Note: if this value is `NULL`, an empty file is created
 	* Returns:
 		* Success: `1`
@@ -65,20 +65,20 @@ Program that copies the content from a file to another file.
 * Usage: `cp file_from file_to`:
 ```
 kristen@ubuntu:~/0x14. File descriptors and permissions$ gcc -Wall -pedantic -Werror -Wextra 3-cp.c -o cp
-kristen@ubuntu:~/0x14. File descriptors and permissions$ cat incitatous 
+kristen@ubuntu:~/0x14. File descriptors and permissions$ cat incitatous
 Why you should think twice before putting pictures on social media.
 (What you always wanted to know about @Incitatous)
 #PrivacyAware
 http://imgur.com/a/Mq1tc
 kristen@ubuntu:~/0x14. File descriptors and permissions$ ./cp incitatous Incitatous
-kristen@ubuntu:~/0x14. File descriptors and permissions$ ls -l Incitatous 
+kristen@ubuntu:~/0x14. File descriptors and permissions$ ls -l Incitatous
 -rw-rw-r-- 1 kristen kristen 158 Jun  3 15:39 Incitatous
-kristen@ubuntu:~/0x14. File descriptors and permissions$ cat Incitatous 
+kristen@ubuntu:~/0x14. File descriptors and permissions$ cat Incitatous
 Why you should think twice before putting pictures on social media.
 (What you always wanted to know about @Incitatous)
 #PrivacyAware
 http://imgur.com/a/Mq1tc
-kristen@ubuntu:~/0x14. File descriptors and permissions$ 
+kristen@ubuntu:~/0x14. File descriptors and permissions$
 ```
 
 ## Authors
