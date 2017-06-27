@@ -19,10 +19,10 @@ All code is written in Betty style. Information about this style can be found [h
 #### Usage
 To use a makefile, run the following code: `make [rule_name] -f <Makefile_name>`
 
- 
+
 ## Files
 ### Holberton Source Code
-Holberton School provided the following files to be used by my makefiles. 
+Holberton School provided the following files to be used by my makefiles.
 
 [holberton.c](holberton.c) : prints the Holberton logo
 * Prototype: `void print_holberton(void);`
