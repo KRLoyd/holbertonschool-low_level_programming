@@ -16,6 +16,8 @@ These functions have been tested on Ubuntu 14.04.5 LTS.
 Tests and development are done in VirtualBox on Ubuntu via Vagrant(1.8.1).
 #### Style
 All code is written in Betty style. Information about this style can be found [here](https://github.com/holbertonschool/Betty/wiki).
+#### Usage
+To use a makefile, run the following code: `make [rule_name] -f <Makefile_name>`
 
  
 ## Files
