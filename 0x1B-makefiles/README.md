@@ -82,6 +82,24 @@ Holberton School provided the following files to be used by my makefiles.
     *  `RM` : program to delete files
     * `CFLAGS` : compiler flags `-Wall -Werror -Wextra -pedantic`
 
+[100-Makefile](100-Makefile)
+* Notes:
+    * `100-Makefiel` works even if there are files in the directory that have the same name as rules. 
+    * Makefile will not compile if the header file is missing.
+* Rules:
+    * `all` : bulds the `holberton` executable
+    * `clean` : deletes Emacs temporary files and the executable file
+    * `oclean` : delete the object files
+    * `fclean` : deletes the Emacs temporary files, the executable file, and object files
+    * `re` : forces recompilation of all source files
+* Variables:
+    * `CC` : compiler to be used
+    * `SRC` : `.c` files
+    * `OBJ` : `.o` files
+    * `NAME` : name of the executable
+    * `RM` : program to delete files
+    * `CFLAGS` : compiler flags `-Wall -Werror -Wextra -pedantic`
+
 ## Authors
 Kristen Loyd        [Github](https://github.com/KRLoyd) |  [LinkedIn](https://www.linkedin.com/in/kristen-loyd-34984a92)
 
