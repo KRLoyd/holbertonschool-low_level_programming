@@ -9,6 +9,12 @@ int binary_tree_is_perfect(const binary_tree_t *tree)
 {
 	if (tree == NULL)
 		return (0);
+	
+	/* Is this a single node binary tree? */
+	if (tree->parent == NULL
+	    && tree->left == NULL
+	    && tree->right == NULL)
+		return (1);
 
 	/* Are left child and right child both perfect? */
 	if (binary_tree_is_perfect(tree->left)
