@@ -7,19 +7,34 @@
  */
 int binary_tree_is_perfect(const binary_tree_t *tree)
 {
+	static unsigned int depth;
+
+
 	if (tree == NULL)
 		return (0);
-	
+
+	if (tree->parent == NULL)
+		depth = 0;
+
+
 	/* Is this a single node binary tree? */
 	if (tree->parent == NULL
 	    && tree->left == NULL
 	    && tree->right == NULL)
 		return (1);
 
+	depth++;
+
 	/* Are left child and right child both perfect? */
 	if (binary_tree_is_perfect(tree->left)
 	    && binary_tree_is_perfect(tree->right))
 		return (1);
+	
+	if (binary_tree_leaves(tree) == 1)
+	{
+		if (binary_tree_depth(tree) != depth)
+			return (0);
+	}
 
 	/* Check if left child and right child are full */
 	/* and if the depths match */
@@ -98,4 +113,30 @@ size_t binary_tree_height(const binary_tree_t *tree)
 		height = (rheight);
 
 	return (height);
+}
+/**
+ * binary_tree_depth - function to measure the depth of a node in a binary tree
+ *
+ * @node: pointer to the node to measure the depth of
+ * Return: depth of the node
+ */
+size_t binary_tree_depth(const binary_tree_t *node)
+{
+	const binary_tree_t *ptr;
+	size_t depth;
+
+	ptr = NULL;
+	depth = 0;
+
+	if (node == NULL)
+		return (0);
+
+	ptr = node;
+	while (ptr->parent != NULL)
+	{
+		depth++;
+		ptr = ptr->parent;
+	}
+
+	return (depth);
 }
