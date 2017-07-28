@@ -7,41 +7,12 @@
  */
 int binary_tree_is_perfect(const binary_tree_t *tree)
 {
-	static unsigned int depth;
-
-
 	if (tree == NULL)
 		return (0);
 
-	if (tree->parent == NULL)
-		depth = 0;
-
-
-	/* Is this a single node binary tree? */
-	if (tree->parent == NULL
-	    && tree->left == NULL
-	    && tree->right == NULL)
-		return (1);
-
-	depth++;
-
-	/* Are left child and right child both perfect? */
-	if (binary_tree_is_perfect(tree->left)
-	    && binary_tree_is_perfect(tree->right))
-		return (1);
-
-	if (binary_tree_leaves(tree) == 1)
-	{
-		if (binary_tree_depth(tree) != depth)
-			return (0);
-	}
-
-	/* Check if left child and right child are full */
-	/* and if the depths match */
-	if ((binary_tree_is_full(tree->left)
-	     && binary_tree_is_full(tree->right))
-	    && ((binary_tree_height(tree->left)
-		 == binary_tree_height(tree->right))))
+	/* Check if tree is both full and balanced */
+	if ((binary_tree_is_full(tree)
+	     && binary_tree_balance(tree) == 0))
 		return (1);
 
 	return (0);
@@ -71,12 +42,36 @@ int binary_tree_is_full(const binary_tree_t *tree)
 
 }
 /**
- * binary_tree_height - function that measures the height of a binary tree
+ * binary_tree_balance - Measures the balance factor of a binary tree
+ *
+ * @tree: pointer to the root node of the tree to measure
+ * Return: balance factor for the tree
+ */
+int binary_tree_balance(const binary_tree_t *tree)
+{
+	int balance, lheight, rheight;
+
+	if (tree == NULL)
+		return (0);
+
+	balance = 0;
+	lheight = 0;
+	rheight = 0;
+
+	lheight = max_tree_height(tree->left);
+	rheight = max_tree_height(tree->right);
+
+	balance = lheight - rheight;
+	return (balance);
+}
+
+/**
+ * max_tree_height - function that measures the height of a binary tree
  *
  * @tree: pointer to the root node of the tree to measure the height of
  * Return: Height of the tree
  */
-size_t binary_tree_height(const binary_tree_t *tree)
+size_t max_tree_height(const binary_tree_t *tree)
 {
 	size_t height, lheight, rheight;
 
@@ -89,22 +84,12 @@ size_t binary_tree_height(const binary_tree_t *tree)
 		return (0);
 
 	/* Get height of left */
-	if (tree->left != NULL)
-	{
-		lheight = binary_tree_height(tree->left);
-		lheight += 1;
-	}
-	else /* no left child */
-		lheight = 0;
+	lheight = max_tree_height(tree->left);
+	lheight += 1;
 
 	/* Get height of right */
-	if (tree->right != NULL)
-	{
-		rheight = binary_tree_height(tree->right);
-		rheight += 1;
-	}
-	else /* no right child */
-		rheight = 0;
+	rheight = max_tree_height(tree->right);
+	rheight += 1;
 
 	/* compare left and right heights; set height to larger of the two */
 	if (lheight >= rheight)
@@ -113,30 +98,4 @@ size_t binary_tree_height(const binary_tree_t *tree)
 		height = (rheight);
 
 	return (height);
-}
-/**
- * binary_tree_depth - function to measure the depth of a node in a binary tree
- *
- * @node: pointer to the node to measure the depth of
- * Return: depth of the node
- */
-size_t binary_tree_depth(const binary_tree_t *node)
-{
-	const binary_tree_t *ptr;
-	size_t depth;
-
-	ptr = NULL;
-	depth = 0;
-
-	if (node == NULL)
-		return (0);
-
-	ptr = node;
-	while (ptr->parent != NULL)
-	{
-		depth++;
-		ptr = ptr->parent;
-	}
-
-	return (depth);
 }
