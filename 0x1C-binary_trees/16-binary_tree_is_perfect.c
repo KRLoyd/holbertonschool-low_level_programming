@@ -29,7 +29,7 @@ int binary_tree_is_perfect(const binary_tree_t *tree)
  *
  * @tree: pointer to the root of the tree to check
  * @currentlevel: pointer to an un int representing level of tree
- * @depthlevel: unsigned int to compare 
+ * @depthlevel: unsigned int to compare
  * Return: 1 (same level leaves), 0 (differenct level leaves)
  */
 int leaf_check(const binary_tree_t *tree,
