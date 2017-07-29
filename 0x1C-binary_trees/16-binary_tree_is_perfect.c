@@ -7,40 +7,49 @@
  */
 int binary_tree_is_perfect(const binary_tree_t *tree)
 {
-	if (tree == NULL)
-		return (0);
+	unsigned int currentlevel;
+	unsigned int templevel;
 
-	/* Check if tree is both full and balanced */
-	if ((binary_tree_is_full(tree)
-	     && binary_tree_balance(tree) == 0))
-		return (1);
-
-	return (0);
-}
-
-/**
- * binary_tree_is_full - checks if a binary tree is full
- *
- * @tree: pointer to the root node of the tree to evaluate
- * Return: 0 (not full), 1 (full)
- */
-int binary_tree_is_full(const binary_tree_t *tree)
-{
+	currentlevel = 0;
+	templevel = 0;
 
 	if (tree == NULL)
 		return (0);
 
-	if ((tree->left == NULL) && (tree->right == NULL))
+	if (binary_tree_balance(tree) == 0
+	    && binary_tree_is_full(tree)
+	    && leaf_check(tree, &currentlevel, templevel))
 		return (1);
-
-	if ((binary_tree_is_full(tree->left) == 1) &&
-	    (binary_tree_is_full(tree->right) == 1))
-		return (1);
-
 	else
 		return (0);
 
 }
+/**
+ * leaf_check - checks that all leaves of a binary tree are at the same level
+ *
+ * @tree: pointer to the root of the tree to check
+ * @currentlevel: pointer to an un int representing level of tree
+ * @depthlevel: unsigned int to compare 
+ * Return: 1 (same level leaves), 0 (differenct level leaves)
+ */
+int leaf_check(const binary_tree_t *tree,
+	       unsigned int *currentlevel,
+	       unsigned int depthlevel)
+{
+	if (tree->left == NULL && tree->right == NULL)
+	{
+		if (*currentlevel == 0)
+		{
+			*currentlevel = depthlevel;
+			return (1);
+		}
+
+		return (depthlevel == *currentlevel);
+	}
+	return (leaf_check(tree->left, currentlevel, depthlevel + 1)
+		&& leaf_check(tree->right, currentlevel, depthlevel + 1));
+}
+
 /**
  * binary_tree_balance - Measures the balance factor of a binary tree
  *
@@ -98,4 +107,27 @@ size_t max_tree_height(const binary_tree_t *tree)
 		height = (rheight);
 
 	return (height);
+}
+/**
+ * binary_tree_is_full - checks if a binary tree is full
+ *
+ * @tree: pointer to the root node of the tree to evaluate
+ * Return: 0 (not full), 1 (full)
+ */
+int binary_tree_is_full(const binary_tree_t *tree)
+{
+
+	if (tree == NULL)
+		return (0);
+
+	if ((tree->left == NULL) && (tree->right == NULL))
+		return (1);
+
+	if ((binary_tree_is_full(tree->left) == 1) &&
+	    (binary_tree_is_full(tree->right) == 1))
+		return (1);
+
+	else
+		return (0);
+
 }
