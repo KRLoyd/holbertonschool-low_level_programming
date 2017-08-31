@@ -14,7 +14,7 @@ All code is written in Betty style. Information about this style can be found [h
 
 Protoypes of all functions used are included in header file `holberton.h`
 
- 
+
 ## Files
 All files must be executable to run. To add executable permissions to any file: `chmod u+x file_name`
 
