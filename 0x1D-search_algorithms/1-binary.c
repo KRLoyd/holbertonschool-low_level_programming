@@ -47,8 +47,8 @@ int rec_bs(int *array, int low, int high, int value)
 	else if (array[mid] > value)
 	{
 		if (high - low == 1)
-			mid = low + 1;
-		return (rec_bs(array, low, mid - 1, value));
+			mid = low;
+		return (rec_bs(array, low, mid, value));
 	}
 	else /* array[mid] < value */
 	{
