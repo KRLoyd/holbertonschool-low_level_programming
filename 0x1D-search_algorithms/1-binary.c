@@ -1,7 +1,7 @@
 #include "search_algos.h"
 /**
  * print_array - function to print an integer array
- * 
+ *
  * @array: pointer to the first element in the array
  * @low: index of the first element in the array to print
  * @high: index of the last element in the array to print
@@ -11,6 +11,7 @@ void print_array(int *array, int low, int high)
 {
 	if (array != NULL)
 	{
+		printf("Searching in array: ");
 		for (; low <= high; low++)
 		{
 			printf("%d", array[low]);
