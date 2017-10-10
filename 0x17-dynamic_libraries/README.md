@@ -1,4 +1,3 @@
-README.md
 # 0x17. C - Dynamic libraries
 
 ## Purpose
